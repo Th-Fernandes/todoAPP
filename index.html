@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!--CSS-->
+  <link rel="stylesheet" href="./styles/index.css">
+  <!--fonts-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <title>Todoh</title>
+</head>
+<body>
+  <header class="main-header">
+    <h1>Minhas tarefas</h1>
+
+    <div class="user-account-data">
+      <span class="username">Thiago</span>
+      <img src="./images/user-photo.svg" alt="user default photo">
+    </div>
+  </header>
+
+  <main>
+    <section id="defaultList">
+      <span class="list-type"> Sem categoria</span>
+
+      <ul class="task-list">
+        <li class="task">
+          <input type="checkbox" />
+          <p class="task-content"> arrumar o quarto</p>
+        </li>
+
+        <li class="task">
+          <input type="checkbox" />
+          <p class="task-content"> comprar legumes</p>
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <button class="create-task">
+      <img id="addTask" src="./images/add-task.svg" alt="adicione uma nova tarefa">
+    </button>
+  </footer>
+</body>
+
+<script  type="module">
+  import { buttonFunctionality } from './index.js'
+  buttonFunctionality()
+</script>
+</html>

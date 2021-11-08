@@ -1,0 +1,94 @@
+/* global settings */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+:root {
+  font-family: "Poppins", sans-serif;
+  color: #f0f0f0;
+}
+
+body {
+  max-width: 144rem;
+  height: 100vh;
+  margin: auto;
+  background-color: #E2E2E2;
+}
+body header.main-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 10rem;
+  background-color: #8783B8;
+  padding: 0 2rem;
+}
+body header.main-header .user-account-data {
+  display: flex;
+  align-items: center;
+}
+body header.main-header .user-account-data > span {
+  font-size: 1.4rem;
+  margin-right: 1rem;
+}
+body header.main-header .user-account-data > img {
+  width: 3.5rem;
+}
+body main section#defaultList {
+  width: 90%;
+  min-height: 15rem;
+  padding: 1.25rem;
+  margin: 2rem auto 1rem;
+  border-radius: 8px;
+  background-color: white;
+  filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.05));
+  color: #0f0f0f;
+}
+body main section#defaultList .list-type {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  top: -20px;
+  width: 12rem;
+  height: 3rem;
+  border-radius: 5px;
+  background-color: #0f0f0f;
+  color: #f0f0f0;
+  font-size: 1.25rem;
+}
+body main section#defaultList .task-list .task {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.25rem;
+}
+body main section#defaultList .task-list .task > p {
+  margin-left: 1.2rem;
+  font-size: 1.4rem;
+}
+body footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 5rem;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background-color: #9f9bbc;
+}
+body footer > button {
+  background: transparent;
+  border: none;
+}
+body footer > button #addTask {
+  width: 7rem;
+  margin-top: -1rem;
+}
+
+/*# sourceMappingURL=index.css.map */
