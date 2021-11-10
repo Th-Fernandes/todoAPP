@@ -1,0 +1,25 @@
+{
+  "name": "todo-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Th-Fernandes/todoAPP.git"
+  },
+  "keywords": [
+    "js",
+    "scss",
+    "html"
+  ],
+  "author": "Thiago Fernandes",
+  "license": "MIT",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/Th-Fernandes/todoAPP/issues"
+  },
+  "homepage": "https://github.com/Th-Fernandes/todoAPP#readme"
+}

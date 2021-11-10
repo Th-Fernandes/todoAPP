@@ -38,6 +38,19 @@
         </li>
       </ul>
     </section>
+
+    <section class="modal-overlay ">
+      <div class="modal">
+        <form id="tasksData" action="">
+          <div class="taskData">
+            <label for="taskContent">Que tarefa deseja adicionar?</label>
+          <input  id="taskContent" type="text">
+          </div>
+
+          <button id="submitTaskData"> Enviar </button>
+        </form>
+      </div>
+    </section>
   </main>
 
   <footer>
@@ -48,7 +61,9 @@
 </body>
 
 <script  type="module">
-  import { buttonFunctionality } from './index.js'
-  buttonFunctionality()
+  import { taskButtonsSettings } from './index.js'
+  taskButtonsSettings.getModalTasksButton()
+  taskButtonsSettings.getTaskDataButton()
+  taskButtonsSettings.taskChecked()
 </script>
 </html>

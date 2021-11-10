@@ -42,6 +42,7 @@ body header.main-header .user-account-data > img {
 body main section#defaultList {
   width: 90%;
   min-height: 15rem;
+  max-height: 28rem;
   padding: 1.25rem;
   margin: 2rem auto 1rem;
   border-radius: 8px;
@@ -62,6 +63,10 @@ body main section#defaultList .list-type {
   color: #f0f0f0;
   font-size: 1.25rem;
 }
+body main section#defaultList .task-list {
+  height: 20rem;
+  overflow-y: scroll;
+}
 body main section#defaultList .task-list .task {
   display: flex;
   align-items: center;
@@ -70,6 +75,55 @@ body main section#defaultList .task-list .task {
 body main section#defaultList .task-list .task > p {
   margin-left: 1.2rem;
   font-size: 1.4rem;
+}
+body main section.modal-overlay {
+  visibility: hidden;
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(15, 15, 15, 0.5);
+}
+body main section.modal-overlay.active {
+  visibility: visible;
+}
+body main section.modal-overlay .modal {
+  background-color: #f0f0f0;
+  color: #0f0f0f;
+  width: 90%;
+  min-height: 30rem;
+  padding: 3rem 1.5rem;
+  text-align: center;
+  border-radius: 16px;
+  height: 30rem;
+}
+body main section.modal-overlay .modal #tasksData {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  height: 100%;
+}
+body main section.modal-overlay .modal #tasksData .taskData {
+  width: 100%;
+}
+body main section.modal-overlay .modal #tasksData .taskData > label {
+  display: block;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+}
+body main section.modal-overlay .modal #tasksData .taskData #taskContent {
+  width: 100%;
+  border: 0.5px #0f0f0f solid;
+  padding: 0 1rem;
+  border-radius: 5px;
+}
+body main section.modal-overlay .modal #tasksData #taskContent:focus {
+  outline: none;
+}
+body main section.modal-overlay .modal #tasksData #submitTaskData {
+  margin: 0 auto;
 }
 body footer {
   display: flex;

@@ -53,13 +53,13 @@ body {
     section#defaultList {
       width: 90%;
       min-height: 15rem;
+      max-height: 28rem;
       padding: 1.25rem;
       margin: 2rem auto 1rem;
       border-radius: 8px;
       background-color: white;
       filter: drop-shadow(5px 5px 10px rgba(black, 0.05));
       color: $black;
-
       .list-type {
         display: flex;
         align-items: center;
@@ -75,6 +75,8 @@ body {
       }
 
       .task-list {
+        height: 20rem;
+        overflow-y: scroll;
         .task {
           display: flex;
           align-items: center;
@@ -84,6 +86,66 @@ body {
             margin-left: 1.2rem;
             font-size: 1.4rem;
           }
+        }
+      }
+    }
+
+    section.modal-overlay {
+
+      visibility: hidden;
+      position: fixed;
+      inset: 0;
+      z-index: 999;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: rgba($black, .5);
+      &.active {
+        visibility: visible;
+      }
+
+      .modal {
+        background-color: $white;
+        color: $black;
+        width: 90%;
+        min-height: 30rem;
+        padding: 3rem 1.5rem;
+        text-align: center;
+        border-radius: 16px;
+        height: 30rem;
+
+        #tasksData {
+          display: flex;
+          flex-wrap: wrap;
+          align-items: center;
+          height: 100%;
+         
+          .taskData {
+            width: 100%;
+           
+
+            > label {
+              display: block;
+              margin-bottom: 1.5rem;
+              font-size: 1.5rem;
+            }
+  
+            #taskContent {
+              width: 100%;
+              border: .5px $black solid;
+              padding: 0 1rem;
+              border-radius: 5px;
+            }
+          }
+          #taskContent:focus {
+            outline: none;
+          }
+
+          #submitTaskData {
+            margin: 0 auto;
+           //
+          }
+
         }
       }
     }
