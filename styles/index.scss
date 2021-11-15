@@ -81,10 +81,22 @@ body {
           display: flex;
           align-items: center;
           margin-bottom: 1.25rem;
+          width: 100%;
 
           > p {
             margin-left: 1.2rem;
             font-size: 1.4rem;
+
+          }
+
+          > img {
+
+          }
+        }
+
+        .task.task-concluded {
+          .task-content {
+            text-decoration: line-through;
           }
         }
       }

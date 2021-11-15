@@ -71,10 +71,14 @@ body main section#defaultList .task-list .task {
   display: flex;
   align-items: center;
   margin-bottom: 1.25rem;
+  width: 100%;
 }
 body main section#defaultList .task-list .task > p {
   margin-left: 1.2rem;
   font-size: 1.4rem;
+}
+body main section#defaultList .task-list .task.task-concluded .task-content {
+  text-decoration: line-through;
 }
 body main section.modal-overlay {
   visibility: hidden;

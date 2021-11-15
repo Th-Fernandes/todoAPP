@@ -1,13 +1,30 @@
  // cria uma nova task na lista
 function addTask(task) {
-  const selectList = document.querySelector('.task-list') 
-    
-  selectList.innerHTML += `
-  <li class="task">
-    <input type="checkbox" />
-    <p class="task-content">${task}</p>
-  </li>
+  const taskList = document.querySelector('.task-list')
+  const createLi = document.createElement('li')
+  createLi.classList.add('task')
+ 
+  const createCheckbox = document.createElement('input')
+ 
+  createCheckbox.type = "checkbox"
+  createLi.appendChild(createCheckbox)
+
+  createLi.innerHTML += `
+
+  <p class="task-content">${task}</p>
+  <img src="./images/delete-task.svg"></img>
   `
+  createLi.children[0].addEventListener('click', (event) => {
+    const botaoConclui = event.target
+    const selecionarPai = botaoConclui.parentElement
+    console.log( 'aa')
+    
+    selecionarPai.classList.toggle("task-concluded")
+        
+  })
+  
+  taskList.appendChild(createLi)
+  
 }
 
 const taskButtonsSettings = {
@@ -42,27 +59,22 @@ const taskButtonsSettings = {
   },
 
   
-  taskChecked() {
-    const task = document.querySelectorAll('.task')
-
-    for(let checkbox of task) {
-      console.log(checkbox.children[0])
-
-      checkbox.children[0].addEventListener('click', () => {
-        const taskContent = document.querySelectorAll('.task-content')
-
-        if (checkbox.children[0].checked) {
-          taskContent[0].style.textDecorationLine = "line-through"
-        }
-
-        else {
-          taskContent[0].style.textDecorationLine = "none"
-        }
-      })
-    }
+  taskChecked: (event) => {
+      const botaoConclui = event.target
+      const selecionarPai = botaoConclui.parentElement
+      
+      selecionarPai.classList.toggle(".task-concluded")
+          
   }
 }
 
-
+const taskChecked = (event) => {
+  const botaoConclui = event.target
+  const selecionarPai = botaoConclui.parentElement
+  console.log( 'aa')
+  
+  selecionarPai.classList.toggle(".task-concluded")
+      
+}
 
 export { taskButtonsSettings }
