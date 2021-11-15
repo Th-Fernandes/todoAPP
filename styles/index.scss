@@ -21,7 +21,7 @@ html {
 
 
 body { 
-  max-width: 144rem;
+  
   height: 100vh;
   margin: auto;
   background-color: #E2E2E2;
@@ -34,17 +34,32 @@ body {
     background-color: #8783B8;
     padding: 0 2rem;
 
-    .user-account-data {
+    .header-container {
+      width: 144rem;
+      margin: auto;
       display: flex;
       align-items: center;
+      justify-content: space-between;
+      
+      .user-account-data {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        transition: .25s all ;
 
-      > span {
-        font-size: 1.4rem;
-        margin-right: 1rem;
-      }
+        &:hover {
+          filter: brightness(2)
+        }
 
-      > img {
-        width: 3.5rem;
+
+        > span {
+          font-size: 1.4rem;
+          margin-right: 1rem;
+        }
+  
+        > img {
+          width: 3.5rem;
+        }
       }
     }
   }
@@ -52,8 +67,8 @@ body {
   main {
     section#defaultList {
       width: 90%;
-      min-height: 15rem;
-      max-height: 28rem;
+      max-width: 144rem;
+      height: 45rem;
       padding: 1.25rem;
       margin: 2rem auto 1rem;
       border-radius: 8px;
@@ -72,26 +87,41 @@ body {
         background-color: $black;
         color: $white;
         font-size: 1.25rem;
+        transition: .5s all;
+        cursor: context-menu;
+
+        &:hover {
+          transform: scale(1.05);
+        }
       }
 
       .task-list {
-        height: 20rem;
-        overflow-y: scroll;
+        min-height: 20rem;
+        max-height: 45rem;
+        overflow-y: auto;
         .task {
           display: flex;
           align-items: center;
+          justify-content: space-between;
           margin-bottom: 1.25rem;
           width: 100%;
 
-          > p {
-            margin-left: 1.2rem;
-            font-size: 1.4rem;
-
+          .task-check {
+            display: flex;
+            align-items: center;
+            > p {
+              margin-left: 1.2rem;
+              font-size: 1.4rem;
+            }
           }
 
-          > img {
-
+          .delete-task {
+            cursor: pointer;
           }
+
+          //> img {
+
+          //}
         }
 
         .task.task-concluded {
@@ -103,7 +133,6 @@ body {
     }
 
     section.modal-overlay {
-
       visibility: hidden;
       position: fixed;
       inset: 0;
@@ -129,35 +158,49 @@ body {
         #tasksData {
           display: flex;
           flex-wrap: wrap;
-          align-items: center;
           height: 100%;
          
           .taskData {
             width: 100%;
            
-
             > label {
               display: block;
               margin-bottom: 1.5rem;
-              font-size: 1.5rem;
+              font-size: 2.2rem;
             }
-  
+
             #taskContent {
-              width: 100%;
+              width: 50%;
+              height: 3rem;
               border: .5px $black solid;
               padding: 0 1rem;
+              border: none;
               border-radius: 5px;
+              filter: drop-shadow(5px 5px 10px rgba(black, 0.1));
+
+              &:focus {
+                outline: none;
+              }
             }
           }
-          #taskContent:focus {
-            outline: none;
-          }
 
+          
           #submitTaskData {
+            display: block;
+            background-color: #8783B8;
             margin: 0 auto;
-           //
-          }
+            color: white;
+            border: none;
+            width: 15rem;
+            height: 4rem;
+            cursor: pointer;
+            transition: 1s filter;
+            align-self: flex-end;
 
+            &:hover {
+              filter: brightness(1.1)
+            }
+          }
         }
       }
     }
@@ -176,12 +219,29 @@ body {
 
     > button {
       background: transparent;
+      cursor: pointer;
       border: none;
 
       #addTask {
         width: 7rem;
         margin-top: -1rem;
         
+      }
+    }
+  }
+}
+
+@media (min-width: 900px) {
+  body {
+    main {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      max-width: 144rem;
+      margin: auto;
+
+      section#defaultList {
+        width: min(70rem, 45%);
       }
     }
   }

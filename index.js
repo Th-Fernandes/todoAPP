@@ -12,18 +12,23 @@ function addTask(task) {
   createLi.innerHTML += `
 
   <p class="task-content">${task}</p>
-  <img src="./images/delete-task.svg"></img>
+  <img class="delete-task" src="./images/delete-task.svg"></img>
   `
   createLi.children[0].addEventListener('click', (event) => {
     const botaoConclui = event.target
     const selecionarPai = botaoConclui.parentElement
-    console.log( 'aa')
-    
+
     selecionarPai.classList.toggle("task-concluded")
-        
   })
-  
+
+  createLi.children[2].addEventListener('click', (event) => {
+    const evento = event.target
+    const excluirElemento = evento.parentElement.remove()
+    
+  } )
+
   taskList.appendChild(createLi)
+
   
 }
 
